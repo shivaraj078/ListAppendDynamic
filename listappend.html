@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>List Appending</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Courier New", Courier, monospace;
+        background: linear-gradient(to right, blue, orange);
+      }
+      ul {
+        list-style: none;
+        font-size: 20px;
+        margin-top: 10px;
+      }
+      li {
+        border: 1px solid black;
+        width: 30%;
+        text-align: center;
+        color: white;
+      }
+      #listingDiv {
+        margin-left: 430px;
+      }
+
+      input {
+        margin-left: 470px;
+      }
+
+      h1 {
+        font-weight: 900;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="text" id="text" placeholder="enter an item" />
+    <button class="btn btn-warning" onclick="addItem()">
+      Add item
+    </button>
+
+    <div id="listingDiv">
+      <h1>MY FRUIT SHOP</h1>
+      <ul id="ul">
+        <li>Mango</li>
+        <li>Orange</li>
+      </ul>
+    </div>
+
+    <script>
+      function addItem() {
+        var text = document.getElementById("text").value;
+        var ul = document.getElementById("ul");
+        var li = document.createElement("li");
+        var txtNode = document.createTextNode(text);
+        console.log(txtNode);
+
+        li.appendChild(txtNode);
+        ul.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
